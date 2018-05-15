@@ -625,7 +625,7 @@ public class Bill_Room extends javax.swing.JFrame {
             BillNoIncrement s=new BillNoIncrement();
     int id=s.idincrement();
     int row= jTable1.getSelectedRow();
-    //s.idincrement();
+    s.idincrement();
     String abc = id + "";
             con=Connect.ConnectDB();
             if (txtBillNo.getText().equals("")) {
