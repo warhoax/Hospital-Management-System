@@ -389,7 +389,7 @@ Statement stmt;
     }//GEN-LAST:event_txtUpdateActionPerformed
 
     private void txtGetDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtGetDataActionPerformed
-        this.hide();
+        //this.hide();
         ServicesRec frm= new ServicesRec();
         frm.setVisible(true);
     }//GEN-LAST:event_txtGetDataActionPerformed
