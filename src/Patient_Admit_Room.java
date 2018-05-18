@@ -174,11 +174,11 @@ private void fillcombo(){
 
         txtBloodGroup.setEditable(false);
 
-        jLabel12.setText("Disease");
+        jLabel12.setText("Disease*");
 
-        jLabel13.setText("Admit Date");
+        jLabel13.setText("Admit Date*");
 
-        jLabel14.setText("Room No.");
+        jLabel14.setText("Room No.*");
 
         jLabel16.setText("Doctor ID");
 

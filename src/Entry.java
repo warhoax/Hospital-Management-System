@@ -93,23 +93,23 @@ private void reset()
 
         jLabel1.setText("Doctor ID");
 
-        jLabel2.setText("Full Name");
+        jLabel2.setText("Full Name*");
 
-        jLabel3.setText("Father's Name");
+        jLabel3.setText("Father's Name*");
 
         jLabel4.setText("Email-id");
 
-        jLabel5.setText("Contact no");
+        jLabel5.setText("Contact no*");
 
         jLabel6.setText("Address");
 
-        jLabel7.setText("Qualifications");
+        jLabel7.setText("Qualifications*");
 
         jLabel9.setText("Gender");
 
         jLabel10.setText("Blood Group");
 
-        jLabel11.setText("Date Of Joining");
+        jLabel11.setText("Date Of Joining*");
 
         txtId.setEditable(false);
 
@@ -134,7 +134,7 @@ private void reset()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                         .addComponent(txtD, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,7 +164,7 @@ private void reset()
                             .addComponent(cmbB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8)
-                .addContainerGap(63, Short.MAX_VALUE))
+                .addContainerGap(52, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -352,10 +352,10 @@ try{
                 JOptionPane.showMessageDialog( this, "Please enter Father's name","Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            if (txtAd.getText().equals("")) {
+            /*if (txtAd.getText().equals("")) {
                 JOptionPane.showMessageDialog( this, "Please enter address","Error", JOptionPane.ERROR_MESSAGE);
                 return;
-            }
+            }*/
            if (txtC.getText().equals("")) {
                 JOptionPane.showMessageDialog( this, "Please enter contact no.","Error", JOptionPane.ERROR_MESSAGE);
                 return;

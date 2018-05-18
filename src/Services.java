@@ -98,15 +98,15 @@ PreparedStatement pst=null;
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Services Info"));
 
-        jLabel1.setText("Service Name");
+        jLabel1.setText("Service Name*");
 
-        jLabel2.setText("Service Date");
+        jLabel2.setText("Service Date*");
 
         jLabel3.setText("Patient ID");
 
         jLabel4.setText("Patient Name");
 
-        jLabel5.setText("Service Charges");
+        jLabel5.setText("Service Charges*");
 
         txtServiceName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

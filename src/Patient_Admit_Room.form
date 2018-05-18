@@ -259,17 +259,17 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel12">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Disease"/>
+            <Property name="text" type="java.lang.String" value="Disease*"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel13">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Admit Date"/>
+            <Property name="text" type="java.lang.String" value="Admit Date*"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel14">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Room No."/>
+            <Property name="text" type="java.lang.String" value="Room No.*"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel16">

@@ -139,12 +139,12 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Service Name"/>
+            <Property name="text" type="java.lang.String" value="Service Name*"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Service Date"/>
+            <Property name="text" type="java.lang.String" value="Service Date*"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
@@ -159,7 +159,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Service Charges"/>
+            <Property name="text" type="java.lang.String" value="Service Charges*"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtServiceName">

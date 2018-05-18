@@ -30,7 +30,6 @@ private void Reset()
 {
     txtId.setText("");
     txtName.setText("");
-   
     txtContact.setText("");
     txtAdd.setText("");
     txtAge.setText("");
@@ -89,15 +88,15 @@ private void Reset()
 
         jLabel1.setText("Patient ID");
 
-        jLabel2.setText("Name");
+        jLabel2.setText("Name*");
 
         jLabel4.setText("Address");
 
-        jLabel5.setText("Contact No.");
+        jLabel5.setText("Contact No.*");
 
         jLabel6.setText("Email-id");
 
-        jLabel7.setText("Age");
+        jLabel7.setText("Age*");
 
         txtId.setEditable(false);
         txtId.addActionListener(new java.awt.event.ActionListener() {
@@ -112,9 +111,9 @@ private void Reset()
             }
         });
 
-        jLabel8.setText("Gender");
+        jLabel8.setText("Gender*");
 
-        jLabel9.setText("Blood Group");
+        jLabel9.setText("Blood Group*");
 
         cmbGender.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "M", "F" }));
 
@@ -257,7 +256,7 @@ private void Reset()
                     .addComponent(btnUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnDelete, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnGetData, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,8 +325,8 @@ try{
 
             }
             
-            if (txtAdd.getText().equals("")) {
-                JOptionPane.showMessageDialog( this, "Please enter address","Error", JOptionPane.ERROR_MESSAGE);
+            if (txtInfo.getText().equals("")) {
+                JOptionPane.showMessageDialog( this, "Please enter iinformation","Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
            if (txtContact.getText().equals("")) {

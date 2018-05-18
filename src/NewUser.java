@@ -72,15 +72,15 @@ public class NewUser extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("User Details"));
         jPanel1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
-        jLabel1.setText("Name");
+        jLabel1.setText("Name*");
 
-        jLabel2.setText("User Name");
+        jLabel2.setText("User Name*");
 
-        jLabel3.setText("Password");
+        jLabel3.setText("Password*");
 
-        jLabel4.setText("Email-id");
+        jLabel4.setText("Email-id*");
 
-        jLabel5.setText("Contact no.");
+        jLabel5.setText("Contact no.*");
 
         txtUsername.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
