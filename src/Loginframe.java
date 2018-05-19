@@ -1,5 +1,6 @@
 
 import java.awt.HeadlessException;
+import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +18,9 @@ import javax.swing.JOptionPane;
  * @author iwarh
  */
 public class Loginframe extends javax.swing.JFrame {
-
+Connection con=null;
+       ResultSet rs=null;
+       PreparedStatement pst=null;
     /**
      * Creates new form Loginframe
      */
@@ -64,6 +67,17 @@ public class Loginframe extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1);
         jButton1.setBounds(180, 420, 100, 23);
+
+        jTextFieldPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldPasswordActionPerformed(evt);
+            }
+        });
+        jTextFieldPassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTextFieldPasswordKeyReleased(evt);
+            }
+        });
         jPanel1.add(jTextFieldPassword);
         jTextFieldPassword.setBounds(240, 370, 130, 30);
 
@@ -111,13 +125,21 @@ public class Loginframe extends javax.swing.JFrame {
              frm.setVisible(true);
            }
            else{
-              JOptionPane.showMessageDialog(null, "Login Failed..Try again !");
+              JOptionPane.showMessageDialog(null, "Login Failed..Id & Password doesnot matched !");
           }
         }catch(SQLException | HeadlessException e){
          JOptionPane.showMessageDialog(null, e); 
                   // TODO add your handling code here:
     }                                        
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextFieldPasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldPasswordKeyReleased
+        
+    }//GEN-LAST:event_jTextFieldPasswordKeyReleased
+
+    private void jTextFieldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldPasswordActionPerformed
 
     /**
      * @param args the command line arguments
