@@ -52,6 +52,12 @@ Connection con=null;
         jLabel2.setText("Username:");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(100, 330, 70, 30);
+
+        jTextFieldUsername.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTextFieldUsernameMouseClicked(evt);
+            }
+        });
         jPanel1.add(jTextFieldUsername);
         jTextFieldUsername.setBounds(240, 330, 130, 30);
 
@@ -140,6 +146,10 @@ Connection con=null;
     private void jTextFieldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldPasswordActionPerformed
+
+    private void jTextFieldUsernameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextFieldUsernameMouseClicked
+      
+    }//GEN-LAST:event_jTextFieldUsernameMouseClicked
 
     /**
      * @param args the command line arguments

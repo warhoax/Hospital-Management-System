@@ -155,6 +155,7 @@ private void Reset()
         });
 
         btnDelete.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 0, 0));
         btnDelete.setText("Delete");
         btnDelete.setEnabled(false);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {

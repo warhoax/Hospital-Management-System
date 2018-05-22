@@ -233,6 +233,7 @@ private void reset()
             }
         });
 
+        btnDelete.setForeground(new java.awt.Color(255, 0, 51));
         btnDelete.setText("Delete");
         btnDelete.setEnabled(false);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -416,7 +417,7 @@ try{
 
     private void btnGetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetActionPerformed
      this.hide();
-     DocRec frm=new DocRec();
+     DocRecWFilter frm=new DocRecWFilter();
      frm.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_btnGetActionPerformed
 

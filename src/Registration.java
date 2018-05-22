@@ -229,6 +229,7 @@ private void Reset()
             }
         });
 
+        btnDelete.setForeground(new java.awt.Color(255, 0, 0));
         btnDelete.setText("Delete");
         btnDelete.setEnabled(false);
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
@@ -375,7 +376,7 @@ try{
 
     private void btnGetDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGetDataActionPerformed
 this.hide();
-PatientRec frm=new PatientRec();
+PatientRecWFilter frm=new PatientRecWFilter();
 frm.setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_btnGetDataActionPerformed
 

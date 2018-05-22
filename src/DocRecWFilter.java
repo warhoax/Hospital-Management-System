@@ -2,13 +2,11 @@
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import net.proteanit.sql.DbUtils;
-import static net.proteanit.sql.DbUtils.resultSetToTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,27 +18,28 @@ import static net.proteanit.sql.DbUtils.resultSetToTableModel;
  *
  * @author iwarh
  */
-public class FilterTestPatientRec2 extends javax.swing.JFrame {
+public class DocRecWFilter extends javax.swing.JFrame {
 Connection con=null;
 ResultSet rs=null;
 PreparedStatement pst=null;
     /**
-     * Creates new form FilterTestPatientRec2
+     * Creates new form DocRecWFilter
      */
-    public FilterTestPatientRec2() {
+    public DocRecWFilter() {
         initComponents();
         con= Connect.ConnectDB();
         Get_Data();
     }
 private void Get_Data(){
-           String sql="select PatientID as 'Patient ID', PatientName as 'Patient Name',Address as 'Address',ContactNo as 'Contact No',Email as 'Email ID',Age,Gen as 'Gender',BG as 'Blood Group',Remarks from Patientregistration";
-           try{
-                pst=con.prepareStatement(sql);
-                rs= pst.executeQuery();
-                jTable1.setModel(DbUtils.resultSetToTableModel(rs));
-            }catch(Exception e){
+      String sql="select DoctorID as 'Doctor ID', DoctorName as 'Doctor Name',FatherName as 'Father Name',Address,ContacNo as 'Contact No',Email as 'Email ID',Qualifications,Gender,BloodGroup as 'Blood Group',DateOfJoining as 'Joining Date' from Doctor order by DoctorID";        
+      try{
+         pst=con.prepareStatement(sql);
+          rs= pst.executeQuery();
+         jTable1.setModel(DbUtils.resultSetToTableModel(rs));
+         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
-          }
+          
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -53,9 +52,10 @@ private void Get_Data(){
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        txtsearch = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        jTextField2 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -75,54 +75,49 @@ private void Get_Data(){
         });
         jScrollPane1.setViewportView(jTable1);
 
-        txtsearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtsearchActionPerformed(evt);
-            }
-        });
-        txtsearch.addKeyListener(new java.awt.event.KeyAdapter() {
+        jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        jTextField2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtsearchKeyReleased(evt);
+                jTextField2KeyReleased(evt);
             }
         });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addComponent(txtsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(324, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1))
+            .addComponent(jScrollPane1)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(267, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(259, 259, 259))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txtsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void txtsearchKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsearchKeyReleased
-        // TODO add your handling code here:
-        DefaultTableModel table = (DefaultTableModel)jTable1.getModel();
-        String search = txtsearch.getText();
-        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(table);
-        jTable1.setRowSorter(tr);
-        tr.setRowFilter(RowFilter.regexFilter(search));
-    }//GEN-LAST:event_txtsearchKeyReleased
-
-    private void txtsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsearchActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtsearchActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
@@ -130,33 +125,33 @@ private void Get_Data(){
             con=Connect.ConnectDB();
             int row= jTable1.getSelectedRow();
             String table_click= jTable1.getModel().getValueAt(row, 0).toString();
-            String sql= "select * from PatientRegistration where PatientID = '" + table_click + "'";
+            String sql= "select * from Doctor where DoctorID = '" + table_click + "'";
             pst=con.prepareStatement(sql);
             rs=  pst.executeQuery();
             if(rs.next()){
                 this.hide();
-                Registration frm = new Registration();
+                Entry frm = new Entry();
                 frm.setVisible(true);
-                String add1=rs.getString("PatientID");
+                String add1=rs.getString("DoctorID");
                 frm.txtId.setText(add1);
-                String add2=rs.getString("Patientname");
+                String add2=rs.getString("Doctorname");
                 frm.txtName.setText(add2);
-               
+                String add3=rs.getString("Fathername");
+                frm.txtFname.setText(add3);
                 String add5=rs.getString("Email");
-                frm.txtEmail.setText(add5);
-                int add6 = rs.getInt("Age");
-                String add= Integer.toString(add6);
-                frm.txtAge.setText(add);
-                String add7=rs.getString("Remarks");
-                frm.txtInfo.setText(add7);
-                String add9=rs.getString("BG");
-                frm.cmbBG.setSelectedItem(add9);
-                String add11=rs.getString("Gen");
-                frm.cmbGender.setSelectedItem(add11);
+                frm.txtE.setText(add5);
+                String add6=rs.getString("Qualifications");
+                frm.txtQ.setText(add6);
+                String add9=rs.getString("BloodGroup");
+                frm.cmbB.setSelectedItem(add9);
+                String add11=rs.getString("Gender");
+                frm.cmbG.setSelectedItem(add11);
+                String add14=rs.getString("DateOfJoining");
+                frm.txtD.setText(add14);
                 String add15=rs.getString("Address");
-                frm.txtAdd.setText(add15);
-                String add16=rs.getString("ContactNo");
-                frm.txtContact.setText(add16);
+                frm.txtAd.setText(add15);
+                String add16=rs.getString("ContacNo");
+                frm.txtC.setText(add16);
                 frm.btnUpdate.setEnabled(true);
                 frm.btnDelete.setEnabled(true);
                 frm.btnSave.setEnabled(false);
@@ -166,6 +161,16 @@ private void Get_Data(){
             JOptionPane.showMessageDialog(this,ex);
         }
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jTextField2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField2KeyReleased
+        // TODO add your handling code here:
+        DefaultTableModel table = (DefaultTableModel)jTable1.getModel();
+        String search = jTextField2.getText();
+        //search.equalsIgnoreCase(search);
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(table);
+        jTable1.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(search));
+    }//GEN-LAST:event_jTextField2KeyReleased
 
     /**
      * @param args the command line arguments
@@ -184,31 +189,28 @@ private void Get_Data(){
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FilterTestPatientRec2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DocRecWFilter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FilterTestPatientRec2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DocRecWFilter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FilterTestPatientRec2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DocRecWFilter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FilterTestPatientRec2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DocRecWFilter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FilterTestPatientRec2().setVisible(true);
+                new DocRecWFilter().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField txtsearch;
+    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
-
-    private void Get_Data(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

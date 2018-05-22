@@ -201,6 +201,7 @@ PreparedStatement pst=null;
             }
         });
 
+        txtDelete.setForeground(new java.awt.Color(255, 0, 0));
         txtDelete.setText("Delete");
         txtDelete.setEnabled(false);
         txtDelete.addActionListener(new java.awt.event.ActionListener() {
