@@ -89,13 +89,13 @@ Connection con=null;
 
         empty.setIcon(new javax.swing.ImageIcon(getClass().getResource("/login.png"))); // NOI18N
         jPanel1.add(empty);
-        empty.setBounds(0, 0, 460, 460);
+        empty.setBounds(-30, 0, 460, 460);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 456, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,7 +131,8 @@ Connection con=null;
              frm.setVisible(true);
            }
            else{
-              JOptionPane.showMessageDialog(null, "Login Failed..Id & Password doesnot matched !");
+              //JOptionPane.showMessageDialog(null, "Login Failed..Id & Password doesnot matched !");
+              JOptionPane.showMessageDialog( this, "Id & Password didn't matched !","Login Failed", JOptionPane.ERROR_MESSAGE);
           }
         }catch(SQLException | HeadlessException e){
          JOptionPane.showMessageDialog(null, e); 

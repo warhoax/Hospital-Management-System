@@ -635,7 +635,7 @@ public class Bill_Room extends javax.swing.JFrame {
             }
             if (!(PatientID.getText().equals(jTable1.getModel().getValueAt(row,0).toString()))) {
                 
-    JOptionPane.showMessageDialog( this, "Patient Data Not Matched","Error", JOptionPane.ERROR_MESSAGE);
+    JOptionPane.showMessageDialog( this, "Patient IDs Not Matched","Error", JOptionPane.ERROR_MESSAGE);
                 /*int row= jTable1.getSelectedRow();
             String val =jTable1.getModel().getValueAt(row,2).toString();
             txtServiceCharges.setText(val);*/
