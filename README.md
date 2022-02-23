@@ -13,5 +13,4 @@ Then you need to download two jar files rs2xml.jar and My-SQL Connector given in
 # Netbeans
 * Then create a new java application project names 'MyHospital' and make sure it is empty(delete any package file in it).
 * Then copy MyHospital folder from the given files and paste it in C:\Users\YOURUSERNAME\Documents\NetBeansProjects and overwrite it and your done.
-# Licence Under![AUR](https://img.shields.io/badge/License-GNU-blue.svg)
 Thank you And have fun coding in the future :)
